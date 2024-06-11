@@ -14,7 +14,7 @@ public class HomeController {
   @Value("${env.info}")
   private String envInfo;
 
-  @GetMapping("/aws/v1")
+  @GetMapping("/aws/v2")
   public String hello(@RequestParam(defaultValue = "1") Integer num){
     if(num == 1){ // info 로그
       log.info("[" + envInfo + "] /aws/v2 이 호출. info 로그 #####################################");
@@ -24,7 +24,7 @@ public class HomeController {
       log.warn("[" + envInfo + "] /aws/v2 이 호출. warn 로그 #####################################");
     }
 
-    return "<h1>AWS 배포 v1</h1>";
+    return "<h1>AWS 배포 v2</h1>";
   }
 
 }
